@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Files List</title>
+</head>
+<body>
+<h3> List of files on cloud </h3>
+<table>
+
+{% for key, value in resultset[0].items() %}
+   <tr>
+        <td> {{ key }} </td>
+        <td> {{ value }} </td>
+   </tr>
+{% endfor %}
+
+</table>
+<br>
+<br>
+<br>
+<form method="get" action="deleteFile">
+    <label> Enter File name to be Deleted : </label>
+    <input type="text" name="filename">
+    <br>
+    <br>
+    <button type="submit" value="submit">Delete</button>
+</form>
+
+<br>
+<br>
+
+<form method="get" action="downloadFile">
+    <label> Enter File name to be Downloaded : </label>
+    <input type="text" name="filename">
+    <br>
+    <br>
+    <button type="submit" value="submit">Download</button>
+</form>
+
+</body>
+</html>
